@@ -2,7 +2,7 @@
 
 Enter any public GitHub username, get a shareable, animated wrap of their coding year — top languages, longest streak, most active repo, and a personality label pulled from real contribution data.
 
-**Live:** https://codewrapped.vercel.app
+**Live:** https://codewrapped-amber.vercel.app
 
 ## Why it's real, not a mock
 

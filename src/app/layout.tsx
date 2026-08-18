@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://codewrapped.vercel.app";
+const SITE_URL = "https://codewrapped-amber.vercel.app";
 const TITLE = "CodeWrapped — your GitHub year, wrapped";
 const DESCRIPTION =
   "Enter any GitHub username and get a shareable, animated wrap of their coding year — top languages, longest streak, most active repo, and a personality label pulled from real data.";
