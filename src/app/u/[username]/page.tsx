@@ -31,11 +31,19 @@ export async function generateMetadata({
   const { wrap } = await loadWrap(username);
   if (!wrap) return { title: `${username} — CodeWrapped` };
 
+  const title = `${wrap.login}'s CodeWrapped — ${wrap.personality.label}`;
+  const description = `${wrap.totalContributions} contributions, a ${wrap.longestStreak}-day streak, top language ${
+    wrap.topLanguages[0]?.name ?? "—"
+  }. See @${wrap.login}'s GitHub year, wrapped.`;
+
+  // openGraph/twitter don't inherit from the plain title/description above —
+  // social platforms read these directly, so they need setting explicitly or
+  // the link preview text stays the generic root layout copy.
   return {
-    title: `${wrap.login}'s CodeWrapped — ${wrap.personality.label}`,
-    description: `${wrap.totalContributions} contributions, a ${wrap.longestStreak}-day streak, top language ${
-      wrap.topLanguages[0]?.name ?? "—"
-    }. See @${wrap.login}'s GitHub year, wrapped.`,
+    title,
+    description,
+    openGraph: { title, description },
+    twitter: { title, description },
   };
 }
 
